@@ -1,0 +1,23 @@
+{
+    "name": "Reserva Automatica",
+    "version": "1.0",
+    "description": "Reservando voos automaticamente!",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "permissions": ["activeTab", "declarativeContent", "storage", "webNavigation", "http://shopping.copaair.com/*", "https://shopping.copaair.com/*"],
+    "content_scripts": [
+        {
+            "matches": ["http://shopping.copaair.com/*", "https://shopping.copaair.com/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "page_action": {
+        "default_popup": "popup.html"
+      },
+      "web_accessible_resources": [
+        "*.mp3"
+    ],
+    "manifest_version": 2
+}
